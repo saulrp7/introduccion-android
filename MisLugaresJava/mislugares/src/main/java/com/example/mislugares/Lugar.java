@@ -4,6 +4,7 @@ public class Lugar {
     private String nombre;
     private String direccion;
     private GeoPunto posicion;
+    private TipoLugar tipo;
     private String foto;
     private int telefono;
     private String url;
@@ -12,10 +13,11 @@ public class Lugar {
     private float valoracion;
 
     public Lugar(String nombre, String direccion, double longitud,
-                 double latitud, int telefono,String url, String comentario,
+                 double latitud, TipoLugar tipo, int telefono,String url, String comentario,
                  int valoracion) {
         fecha =  System.currentTimeMillis();
         posicion = new GeoPunto(longitud, latitud);
+        this.tipo = tipo;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -47,6 +49,10 @@ public class Lugar {
     public void setPosicion(GeoPunto posicion) {
         this.posicion = posicion;
     }
+
+    public TipoLugar getTipo() { return tipo; }
+
+    public void setTipo(TipoLugar tipo) { this.tipo = tipo; }
 
     public String getFoto() {
         return foto;
@@ -102,6 +108,7 @@ public class Lugar {
                 "nombre='" + nombre + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", posicion=" + posicion +
+                ", tipo=" + tipo +
                 ", foto='" + foto + '\'' +
                 ", telefono=" + telefono +
                 ", url='" + url + '\'' +
