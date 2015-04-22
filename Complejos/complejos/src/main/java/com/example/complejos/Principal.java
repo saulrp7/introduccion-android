@@ -12,6 +12,9 @@ public class Principal {
         lista[3] = new ComplejoAmpliado(-1.2,0);
         for (int i=0; i<lista.length; i++) {
             System.out.println("Complejo: " + lista[i]);
+            if (lista[i] instanceof ComplejoAmpliado) {
+                System.out.println("  esReal= "+((ComplejoAmpliado)lista[i]).esReal());
+            }
         }
     }
 }

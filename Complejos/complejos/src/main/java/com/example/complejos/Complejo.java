@@ -25,7 +25,7 @@ public class Complejo {
     }
 
     public String toString() {
-        return real + "+" + imaginario + "i";
+        return real + " + " + imaginario + "i";
     }
 
     public void suma(Complejo v) {
